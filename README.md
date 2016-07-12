@@ -1,0 +1,11 @@
+mocha
+expect
+node-horseman
+redux?
+react-redux
+react
+react-dom?
+webpack
+babel-loader
+babel-core
+babel-preset-es2015

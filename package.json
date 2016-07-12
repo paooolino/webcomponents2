@@ -1,0 +1,24 @@
+{
+  "name": "webcomponents2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/paooolino/webcomponents2.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/paooolino/webcomponents2/issues"
+  },
+  "homepage": "https://github.com/paooolino/webcomponents2#readme",
+  "devDependencies": {
+    "webpack": "^1.13.1"
+  }
+}
