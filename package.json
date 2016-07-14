@@ -34,7 +34,9 @@
     "mocha, expect",
     "   used for testing",
     "babel-register",
-    "   used to be able to use babel with mocha"
+    "   used to be able to use babel with mocha",
+    "nock, redux-mock-store",
+    "   used to test redux async actions"
   ],
   "devDependencies": {
     "babel-core": "^6.10.4",
@@ -45,6 +47,8 @@
     "babel-register": "^6.9.0",
     "expect": "^1.20.2",
     "mocha": "^2.5.3",
+    "nock": "^8.0.0",
+    "redux-mock-store": "^1.1.2",
     "webpack": "^1.13.1"
   },
   "dependencies": {

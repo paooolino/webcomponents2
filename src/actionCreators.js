@@ -26,7 +26,7 @@ export const loginSuccess = (authCode) => {
 export const login = (user, pass) => {
     return createAsyncAction(
         "login", 
-        {user,pass},
+        {user, pass},
         loginRequest, loginFailure, loginSuccess
     );
 };

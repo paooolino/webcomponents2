@@ -1,4 +1,4 @@
-import { API_ENDPOINT } from '../config';
+import { ENDPOINT_HOST, ENDPOINT_PATH } from '../config';
 import fetch from 'isomorphic-fetch';
 
 export const createAsyncAction = (actionName, data, request, error, success) => {
@@ -16,7 +16,7 @@ export const createAsyncAction = (actionName, data, request, error, success) => 
 
     return dispatch => {
         dispatch(request());
-        return fetch(API_ENDPOINT, config)
+        return fetch(ENDPOINT_HOST + ENDPOINT_PATH, config)
             .then(function(response){
                 let json;
                 if(!response.ok) {
