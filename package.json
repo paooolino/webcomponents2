@@ -25,13 +25,19 @@
     "webpack",
     "   used to build the bundle",
     "babel-core, babel-loader, babel-preset-es2015",
-    "   used to be able to use es2015 in js source code"
+    "   used to be able to use es2015 in js source code",
+    "babel-preset-react",
+    "   used to be able to use jsx in js source code",
+    "babel-preset-stage-2",
+    "   used to be able to use spread operator"
   ],
   "devDependencies": {
-    "webpack": "^1.13.1",
     "babel-core": "^6.10.4",
     "babel-loader": "^6.2.4",
-    "babel-preset-es2015": "^6.9.0"
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-react": "^6.11.1",
+    "babel-preset-stage-2": "^6.11.0",
+    "webpack": "^1.13.1"
   },
   "dependencies": {
     "react": "^15.2.1",
