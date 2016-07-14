@@ -11,7 +11,8 @@ import * as types from './actionTypes';
 export const initialState = {
     loggedIn: false,
     requestingLogin: false,
-    loginError: ''
+    loginError: '',
+    authCode: ''
 };
 
 /*
@@ -24,9 +25,7 @@ export default (state=initialState, action) => {
         case types.LOGIN_REQUEST:
             return {
                 ...state,
-                loggedIn: false,
-                requestingLogin: true,
-                loginError: ''
+                requestingLogin: true
             }
             
         case types.LOGIN_FAILURE:
@@ -35,6 +34,14 @@ export default (state=initialState, action) => {
                 loggedIn: false,
                 requestingLogin: false,
                 loginError: action.errorMessage
+            }
+        
+        case types.LOGIN_SUCCESS:
+            return {
+                ...state,
+                loggedIn: true,
+                requestingLogin: false,
+                authCode: action.authCode
             }
             
         default:

@@ -18,7 +18,8 @@ import * as types from '../src/actionTypes.js';
 const initialState = {
     loggedIn: false,
     requestingLogin: false,
-    loginError: ''
+    loginError: '',
+    authCode: ''
 };
 
 /*
@@ -38,35 +39,56 @@ describe("[reducer]", () => {
             const action = {
                 type: types.LOGIN_REQUEST
             };
-            const nextState = reducer({
+            const state = {
+                ...initialState
+            };
+            const expectedState = {
                 ...initialState,
-                loginError: 'an old error'
-            }, action);
-            expect(nextState).toEqual({
-                ...initialState,
-                loggedIn: false,
                 requestingLogin: true
-            });
+            };
+            const nextState = reducer(state, action);
+            expect(nextState).toEqual(expectedState);
         });
         
         it('should handle LOGIN_FAILURE', () => {
+            const errorMessage = 'Whatever error message';
             const action = {
                 type: types.LOGIN_FAILURE,
-                errorMessage: 'Whatever error message'
+                errorMessage
             };
-            const nextState = reducer({
+            const state = {
                 ...initialState,
-                requestingLogin:true
-            }, action);
-            expect(nextState).toEqual({
+                requestingLogin: true
+            };
+            const expectedState = {
                 ...initialState,
                 loggedIn: false,
                 requestingLogin: false,
-                loginError: 'Whatever error message'
-            });
+                loginError: errorMessage
+            };
+            const nextState = reducer(state, action);
+            expect(nextState).toEqual(expectedState);
         });
 
         it('should handle LOGIN_SUCCESS', () => {
+            const authCode = 'whatever_auth_code';
+            const action = {
+                type: types.LOGIN_SUCCESS,
+                authCode
+            };
+            const state = {
+                ...initialState,
+                requestingLogin: true
+            };
+            const expectedState = {
+                ...initialState,
+                loggedIn: true,
+                requestingLogin: false,
+                loginError: '',
+                authCode
+            };
+            const nextState = reducer(state, action);
+            expect(nextState).toEqual(expectedState);
         });
         
     });
