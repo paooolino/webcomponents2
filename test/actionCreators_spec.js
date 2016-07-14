@@ -25,7 +25,7 @@ const mockStore = configureMockStore(middlewares)
     tests
 */
 
-describe("ActionCreators", () => {
+describe("[actionCreators]", () => {
     
     describe('sync', () => {
         
