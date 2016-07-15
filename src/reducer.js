@@ -9,6 +9,8 @@ import * as types from './actionTypes';
 */
 
 export const initialState = {
+    user: '',
+    pass: '',
     loggedIn: false,
     requestingLogin: false,
     loginError: '',

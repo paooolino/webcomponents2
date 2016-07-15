@@ -16,6 +16,8 @@ import * as types from '../src/actionTypes.js';
 */
 
 const initialState = {
+    user: '',
+    pass: '',
     loggedIn: false,
     requestingLogin: false,
     loginError: '',

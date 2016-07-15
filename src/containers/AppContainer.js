@@ -17,6 +17,15 @@ import * as creators from '../actionCreators';
 
 export const mapDispatchToProps = (dispatch) => {
     return {
+        handleChangeUsername: () => {
+            dispatch(creators.changePass(event.target.value));
+        },
+        handleChangePassword: () => {
+            dispatch(creators.changeUser(event.target.value));
+        },
+        handleLogin: (user, pass) => {
+            dispatch(creators.login(user, pass));
+        }
     };
 };
 
@@ -26,6 +35,8 @@ export const mapDispatchToProps = (dispatch) => {
 
 export const mapStateToProps = (state) => {
     return {
+        user: state.user,
+        pass: state.pass
     };
 };
 
