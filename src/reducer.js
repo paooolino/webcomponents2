@@ -46,6 +46,18 @@ export default (state=initialState, action) => {
                 authCode: action.authCode
             }
             
+        case types.CHANGE_USER:
+            return {
+                ...state,
+                user: action.value
+            }
+            
+        case types.CHANGE_PASS:
+            return {
+                ...state,
+                pass: action.value
+            }
+            
         default:
             return state;
     }

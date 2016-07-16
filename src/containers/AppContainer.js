@@ -17,11 +17,11 @@ import * as creators from '../actionCreators';
 
 export const mapDispatchToProps = (dispatch) => {
     return {
-        handleChangeUsername: () => {
-            dispatch(creators.changePass(event.target.value));
-        },
-        handleChangePassword: () => {
+        handleChangeUsername: (event) => {
             dispatch(creators.changeUser(event.target.value));
+        },
+        handleChangePassword: (event) => {
+            dispatch(creators.changePass(event.target.value));
         },
         handleLogin: (user, pass) => {
             dispatch(creators.login(user, pass));

@@ -95,4 +95,43 @@ describe("[reducer]", () => {
         
     });
     
+    describe('changeUser', () => {
+        it('should handle CHANGE_USER action', () => {
+            const value = 'admin';
+            const action = {
+                type: types.CHANGE_USER,
+                value
+            };
+            const state = {
+                ...initialState,
+                user: ''
+            };
+            const expectedState = {
+                ...initialState,
+                user: value
+            };
+            const nextState = reducer(state, action);
+            expect(nextState).toEqual(expectedState);
+        });
+    });
+    
+    describe('changePass', () => {
+        it('should handle CHANGE_PASS action', () => {
+            const value = 'admin123';
+            const action = {
+                type: types.CHANGE_PASS,
+                value
+            };
+            const state = {
+                ...initialState,
+                pass: ''
+            };
+            const expectedState = {
+                ...initialState,
+                pass: value
+            };
+            const nextState = reducer(state, action);
+            expect(nextState).toEqual(expectedState);
+        });
+    });
 });

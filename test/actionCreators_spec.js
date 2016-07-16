@@ -58,6 +58,30 @@ describe("[actionCreators]", () => {
                 });
             });
         });
+
+        describe('changeUser', () => {
+            it('defines changeUser action creator', () => {
+                expect(creators.changeUser).toBeA('function');
+                const value = 'admin';
+                const action = creators.changeUser(value);
+                expect(action).toEqual({
+                    type: 'CHANGE_USER',
+                    value
+                });                
+            });
+        });
+        
+        describe('changePass', () => {
+            it('defines changePass action creator', () => {
+                expect(creators.changePass).toBeA('function');
+                const value = 'admin123';
+                const action = creators.changePass(value);
+                expect(action).toEqual({
+                    type: 'CHANGE_PASS',
+                    value
+                });                
+            });
+        });
         
     });
     

@@ -30,3 +30,17 @@ export const login = (user, pass) => {
         loginRequest, loginFailure, loginSuccess
     );
 };
+
+export const changePass = (value) => {
+    return {
+        type: types.CHANGE_PASS,
+        value
+    }
+};
+
+export const changeUser = (value) => {
+    return {
+        type: types.CHANGE_USER,
+        value
+    }
+};
