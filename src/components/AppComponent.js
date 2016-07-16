@@ -34,6 +34,13 @@ class AppComponent extends Component {
                         />
                     </div>
                 </div>
+                { (() => {
+                    if(this.props.loginError != '' ) {
+                        return (
+                            <div className="loginError">{this.props.loginError}</div>
+                        );
+                    }
+                })() }
                 <div className="formRow">
                     <button 
                         className="login_button"
@@ -57,6 +64,7 @@ class AppComponent extends Component {
 AppComponent.propTypes = {
     user: PropTypes.string.isRequired,
     pass: PropTypes.string.isRequired,
+    loginError: PropTypes.string.isRequired,
     handleChangeUsername: PropTypes.func.isRequired,
     handleChangePassword: PropTypes.func.isRequired,
     handleLogin: PropTypes.func.isRequired

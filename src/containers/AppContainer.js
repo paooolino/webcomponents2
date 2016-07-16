@@ -36,7 +36,8 @@ export const mapDispatchToProps = (dispatch) => {
 export const mapStateToProps = (state) => {
     return {
         user: state.user,
-        pass: state.pass
+        pass: state.pass,
+        loginError: state.loginError
     };
 };
 

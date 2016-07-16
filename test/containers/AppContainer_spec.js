@@ -8,7 +8,7 @@ import expect from 'expect';
     internal imports
 */
 
-import { mapDispatchToProps, mapStateToProps } from '../src/containers/AppContainer';
+import { mapDispatchToProps, mapStateToProps } from '../../src/containers/AppContainer';
 
 describe('[AppContainer]', () => {
     
@@ -29,6 +29,7 @@ describe('[AppContainer]', () => {
             const props = mapStateToProps({});
             expect(props.user).toExists;
             expect(props.pass).toExists;
+            expect(props.loginError).toExists;
         });
         
     });

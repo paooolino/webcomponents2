@@ -10,7 +10,7 @@ import { shallow } from 'enzyme';
     internal imports
 */
 
-import AppComponent from '../src/components/AppComponent';
+import AppComponent from '../../src/components/AppComponent';
 
 /*
     setup
@@ -19,6 +19,7 @@ import AppComponent from '../src/components/AppComponent';
 const defaultProps = {
     user: '',
     pass: '',
+    loginError: '',
     handleChangeUsername: function(){},
     handleChangePassword: function(){},
     handleLogin: function(){}
@@ -54,6 +55,23 @@ describe('[AppComponent]', () => {
             const output = setupShallow();
             expect(output.find('.login_button').length).toBe(1);
             expect(output.find('.login_button').is('button')).toBe(true);
+        });
+        
+        it('should NOT render the div.loginError when loginError is not empty', () => {
+            const loginError = '';
+            const output = setupShallow({
+                loginError
+            });
+            expect(output.find('.loginError').length).toBe(0);
+        });
+        
+        it('should render the div.loginError when loginError is not empty', () => {
+            const loginError = 'Whatever error message';
+            const output = setupShallow({
+                loginError
+            });
+            expect(output.find('.loginError').length).toBe(1);
+            expect(output.find('.loginError').is('div')).toBe(true);
         });
         
     });
